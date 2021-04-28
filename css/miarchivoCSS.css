@@ -1,0 +1,399 @@
+@charset "UTF-8";
+/*Mixin*/
+/*Secciones Enteras*/
+body {
+  width: 100%;
+  height: 1500px;
+  background-color: #f2f2f2;
+  margin: auto;
+  padding: 0px; }
+
+header {
+  width: 100%;
+  height: auto;
+  background-color: #EDECEB;
+  /**background: rgb(224,224,224);
+    background: linear-gradient(0deg, rgba(224,224,224,1) 54%, rgba(120,120,120,1) 100%);**/
+  padding: 0px; }
+
+fieldset {
+  background: #a5a5a5;
+  overflow: hidden; }
+
+/*titulos y subtitulos*/
+h1, h2 {
+  color: black;
+  font-size: 60px;
+  font-family: 'Shippori Mincho B1', serif;
+  letter-spacing: 4px;
+  word-spacing: 6px;
+  text-align: center; }
+
+h2 {
+  margin-top: 4%;
+  margin-bottom: 4%; }
+
+h3 {
+  color: black;
+  font-size: 30px;
+  font-family: 'Shippori Mincho B1', serif;
+  font-weight: 900;
+  text-transform: uppercase; }
+
+h4 {
+  color: black;
+  font-size: 20px;
+  font-family: 'Shippori Mincho B1', serif;
+  font-weight: 900; }
+
+.tituloPrincipal {
+  margin: 0px;
+  padding-top: 30px;
+  font-size: 100px; }
+
+.subtitulo {
+  color: inherit;
+  font-size: 70px;
+  font-family: 'Shippori Mincho B1', serif;
+  margin-top: 5%;
+  margin-bottom: 5%; }
+
+/*listas, parrafos*/
+ol, ul {
+  list-style-type: none;
+  list-style: none;
+  font-family: 'Shippori Mincho B1', serif; }
+
+p {
+  color: black;
+  font-size: 20px;
+  font-family: 'Shippori Mincho B1', serif; }
+
+a {
+  text-decoration: none; }
+
+/*INICIO*/
+.inicio {
+  width: 100%;
+  height: 70%;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: stretch; }
+  .inicio fieldset {
+    margin-bottom: 50px; }
+  .inicio .inicio__video {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-basis: 60%;
+    height: fit-content;
+    padding: 20px; }
+    .inicio .inicio__video .inicio__video inicio__video--fuenteVideo {
+      flex-basis: 10%; }
+    .inicio .inicio__video .inicio__videoParrafo {
+      flex-basis: 30%; }
+  .inicio .inicio__historia {
+    flex-basis: 30%;
+    height: fit-content;
+    padding: 20px; }
+    .inicio .inicio__historia h3 {
+      text-transform: uppercase; }
+
+/*GALERIA*/
+.galeria {
+  display: block; }
+  .galeria .galeria__subtitulo {
+    color: black;
+    font-size: 50px;
+    font-family: 'Shippori Mincho B1', serif;
+    margin-top: 5%;
+    margin-bottom: 5%; }
+  .galeria .carrousel {
+    height: 40%;
+    width: 50%;
+    margin: auto; }
+    .galeria .carrousel .galeria__carrouselTexto {
+      background: #f0f0f0;
+      background: linear-gradient(0deg, rgba(240, 240, 240, 0.412202) 0%, white 100%);
+      color: black; }
+      .galeria .carrousel .galeria__carrouselTexto .galeria__carrouselTitulo {
+        color: black; }
+
+/*FOOTER*/
+.footer {
+  color: black;
+  font-size: 15px;
+  font-family: 'Shippori Mincho B1', serif;
+  font-variant: small-caps;
+  background-image: url(fotosMultimedia/LogoMuseo.png);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+  background-size: 250px;
+  overflow: hidden;
+  margin-right: 30px; }
+  .footer .footer__elemento {
+    padding-top: 0.5%;
+    font-size: 20px; }
+
+/*INDEX*/
+.indice {
+  filter: initial;
+  color: black;
+  font-size: 20px;
+  font-family: 'Shippori Mincho B1', serif;
+  width: 100%;
+  height: inherit;
+  font-variant: small-caps;
+  margin: 0px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  padding-left: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-content: stretch; }
+  .indice .indice__elemento {
+    flex-basis: 19%;
+    padding: 0px;
+    transition: font-size 0.7s;
+    margin-left: 100px; }
+    .indice .indice__elemento a {
+      color: black;
+      text-decoration: none;
+      text-transform: uppercase; }
+      .indice .indice__elemento a:hover {
+        color: black; }
+    .indice .indice__elemento:hover {
+      font-size: 30px; }
+    .indice .indice__elemento .indice__subelemento {
+      margin-left: 0px;
+      font-size: 20px;
+      transition: font-size 0.7s; }
+      .indice .indice__elemento .indice__subelemento:hover {
+        font-size: 30px; }
+
+li {
+  list-style-type: none; }
+
+/*CONTACTO*/
+.formulario {
+  color: black;
+  font-size: 20px;
+  font-family: 'Shippori Mincho B1', serif;
+  font-style: italic;
+  font-variant: small-caps;
+  border: gray 5px solid;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background: #cccccc;
+  animation: shake 1s; }
+  .formulario .button {
+    color: black;
+    font-size: 18px;
+    font-family: 'Shippori Mincho B1', serif; }
+  .formulario #enviar:focus {
+    background-color: lightgreen; }
+  .formulario #resetear:focus {
+    background-color: lightsalmon; }
+
+/*VISITAR*/
+.visita {
+  display: grid;
+  grid-template-areas: "Reserva Horarios" "Recorrido Recorrido";
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 30% 60%;
+  grid-column-gap: 5%;
+  grid-row-gap: 10%;
+  justify-content: center;
+  margin: 5%;
+  height: max-content;
+  padding-bottom: 100px; }
+  .visita .visita__reserva {
+    grid-area: Reserva;
+    background: #7f7f7f;
+    padding: 20px;
+    height: fit-content; }
+  .visita .visita__horarios {
+    grid-area: Horarios;
+    background: #7f7f7f;
+    padding: 20px;
+    height: fit-content; }
+  .visita .visita__recorrido {
+    grid-area: Recorrido;
+    background: #7f7f7f;
+    height: fit-content;
+    padding: 20px;
+    margin-top: 2%; }
+  .visita .visita__mapas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
+    padding-bottom: 5%;
+    padding: 20px;
+    height: fit-content; }
+    .visita .visita__mapas #mapa1:hover, .visita .visita__mapas #mapa2:hover {
+      animation-name: animacionLatir;
+      animation-duration: 2s;
+      animation-iteration-count: infinite; }
+    .visita .visita__mapas .visita__imagenes {
+      width: 900px;
+      margin: 0px; }
+
+/*TALLERES*/
+.talleres {
+  display: grid;
+  grid-template-rows: 22% 22% 22% 22%;
+  grid-template-columns: 100%;
+  grid-template-areas: "taller"  "taller" "taller"  "taller";
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 20%;
+  grid-row-gap: 100px;
+  grid-column-gap: 20%; }
+  .talleres .talleres__taller {
+    display: grid;
+    grid-template-rows: 20% 50%;
+    grid-template-columns: 60% 40%;
+    grid-template-areas: "sub sub" "info foto";
+    grid-row-gap: inherit;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    animation: shake 1.5s;
+    overflow: hidden;
+    align-items: center;
+    justify-items: stretch; }
+    .talleres .talleres__taller:hover {
+      animation-name: animacionLatir;
+      animation-duration: 2s;
+      animation-iteration-count: infinite; }
+    .talleres .talleres__taller div p {
+      color: black;
+      font-size: 15px;
+      font-family: 'Shippori Mincho B1', serif; }
+    .talleres .talleres__taller .talleres__nombre {
+      grid-area: sub;
+      font-size: 50px; }
+    .talleres .talleres__taller .talleres__imagen img {
+      width: auto;
+      height: 300px;
+      overflow: hidden; }
+    .talleres .talleres__taller .talleres__info {
+      grid-area: info;
+      font-size: 20px;
+      display: grid;
+      grid-template-rows: 10% 30% 60%;
+      grid-template-columns: 100%;
+      grid-template-areas: "precio" "dur" "mat";
+      grid-row-gap: 10%;
+      padding: 10px;
+      background: #f2f2f2;
+      overflow: hidden; }
+      .talleres .talleres__taller .talleres__info .talleres__duracion {
+        grid-area: dur; }
+      .talleres .talleres__taller .talleres__info .talleres__precio {
+        grid-area: precio; }
+      .talleres .talleres__taller .talleres__info .talleres__material {
+        grid-area: mat; }
+
+/*Animaciones*/
+@keyframes animacionLatir {
+  0% {
+    transform: scale(1, 1); }
+  50% {
+    transform: scale(1.05, 1.05); }
+  100% {
+    transform: scale(1, 1); } }
+
+@keyframes shake {
+  0% {
+    transform: rotate(4deg); }
+  20% {
+    transform: rotate(-4deg); }
+  40% {
+    transform: rotate(3deg); }
+  60% {
+    transform: rotate(-3deg); }
+  80% {
+    transform: rotate(2deg); }
+  90% {
+    transform: rotate(-2deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+/*Media Query*/
+/*Tablet
+
+INICIO y GALERÍA
+
+*/
+@media only screen and (max-width: 768px) {
+  header {
+    padding: 0px;
+    width: 100%;
+    height: max-content; }
+  .inicio {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px; }
+  .indice {
+    color: black;
+    font-size: 30px;
+    font-family: 'Shippori Mincho B1', serif;
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: left; } }
+
+/*Smartphone
+
+INICIO y GALERÍA
+
+*/
+@media only screen and (max-width: 480px) {
+  header {
+    padding: 0px;
+    height: max-content;
+    width: 100%; }
+  .inicio {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px; }
+  .indice {
+    color: black;
+    font-size: 40px;
+    font-family: 'Shippori Mincho B1', serif;
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center; } }
