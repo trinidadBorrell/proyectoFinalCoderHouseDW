@@ -361,15 +361,15 @@ li {
         padding-bottom: 5%;
         padding-left: 2%;
         padding-right: 2%;
-        animation: shake 1.5s;
+        /*animation: shake 1.5s;*/
         overflow: hidden;
         align-items:center;
         justify-items: stretch;
-        &:hover{
+        /*&:hover{
             animation-name: animacionLatir;
             animation-duration: 2s;
             animation-iteration-count: infinite;
-            }
+            }*/
         div p {
             @include text(black, 15px);
         }
