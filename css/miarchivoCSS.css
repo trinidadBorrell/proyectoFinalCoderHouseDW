@@ -8,6 +8,9 @@ body {
   margin: auto;
   padding: 0px; }
 
+.body__contacto {
+  background-color: initial; }
+
 main {
   width: 100%;
   height: max-content;
@@ -32,13 +35,29 @@ h1 {
   word-spacing: 6px;
   text-align: center; }
 
-.tituloPrincipal {
+.tituloPrincipal, .tituloPrincipal:hover {
+  color: black;
+  font-size: 50px;
+  font-family: 'Shippori Mincho B1', serif;
+  letter-spacing: 4px;
+  word-spacing: 6px;
+  text-align: center;
   margin: 0px;
-  padding-top: 30px; }
+  padding-top: 30px;
+  padding-left: 15%;
+  padding-right: 15%;
+  text-decoration: none; }
+
+.tituloPrincipalLink {
+  color: black;
+  text-decoration: none; }
+  .tituloPrincipalLink:hover {
+    color: black;
+    text-decoration: none; }
 
 .subtitulo, .galeria .galeria__subtitulo {
   color: inherit;
-  font-size: 30px;
+  font-size: 40px;
   font-family: 'Shippori Mincho B1', serif;
   margin-top: 3%;
   margin-bottom: 3%;
@@ -48,12 +67,11 @@ h3, .visita h3 {
   color: black;
   font-size: 20px;
   font-family: 'Shippori Mincho B1', serif;
-  font-weight: 900;
   text-transform: uppercase; }
 
 h4, .visita h4 {
   color: black;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Shippori Mincho B1', serif;
   font-weight: 900; }
 
@@ -97,7 +115,7 @@ a {
     .inicio .inicio__video h3 {
       text-transform: uppercase;
       color: black;
-      font-size: 15px;
+      font-size: 22px;
       font-family: 'Shippori Mincho B1', serif; }
     .inicio .inicio__video iframe {
       width: 100%; }
@@ -111,7 +129,7 @@ a {
     .inicio .inicio__historia h3 {
       text-transform: uppercase;
       color: black;
-      font-size: 15px;
+      font-size: 22px;
       font-family: 'Shippori Mincho B1', serif; }
 
 /*GALERIA*/
@@ -120,28 +138,66 @@ a {
   .galeria .galeria__subtitulo {
     margin-top: 5%;
     margin-bottom: 5%; }
-  .galeria .carrousel {
-    width: 40%;
-    height: 50%;
-    margin: auto;
-    margin-bottom: 5%; }
-    .galeria .carrousel .galeria__carrouselTexto {
-      background: #f0f0f0;
-      background: linear-gradient(0deg, rgba(240, 240, 240, 0.412202) 0%, white 100%);
-      color: black;
-      font-size: inherit;
-      font-family: 'Shippori Mincho B1', serif; }
-      .galeria .carrousel .galeria__carrouselTexto .galeria__carrouselTitulo {
-        color: black;
-        font-size: inherit;
-        font-family: 'Shippori Mincho B1', serif; }
+  .galeria .row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px; }
+  .galeria .column {
+    flex: 33%;
+    max-width: 33%;
+    padding: 0 4px; }
+  .galeria .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    animation: subir 1.5s; }
+  .galeria .container {
+    position: relative;
+    width: 50%; }
+  .galeria .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    transition: .5s ease;
+    backface-visibility: hidden; }
+  .galeria .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -80%);
+    text-align: center; }
+  .galeria .container:hover .image {
+    opacity: 0.3; }
+  .galeria .container:hover .middle {
+    opacity: 1; }
+  .galeria .text {
+    color: black;
+    font-size: 16px;
+    padding: 16px 32px; }
+  @media screen and (max-width: 800px) {
+    .galeria .column {
+      flex: 50%;
+      max-width: 50%; } }
+  @media screen and (max-width: 600px) {
+    .galeria .column {
+      flex: 100%;
+      max-width: 100%; } }
 
 /*FOOTER*/
 footer {
   padding-top: 1%;
   padding-bottom: 1%;
-  background-color: #353535; }
+  background-color: #353535;
+  display: grid;
+  grid-template-areas: "footer logo";
+  grid-template-columns: 70% 30%;
+  justify-content: center;
+  height: max-content; }
   footer .footer__lista {
+    grid-area: footer;
     color: white;
     font-size: 15px;
     font-family: 'Shippori Mincho B1', serif;
@@ -150,6 +206,14 @@ footer {
     margin-right: 30px; }
     footer .footer__lista .footer__elemento {
       padding-top: 0.5%; }
+  footer .footer__logo {
+    grid-area: logo;
+    overflow: hidden;
+    padding-top: 5%;
+    padding-left: 10%; }
+    footer .footer__logo img {
+      height: 50%;
+      width: auto; }
 
 /*INDEX*/
 .indice {
@@ -172,8 +236,8 @@ footer {
   .indice .indice__elemento {
     flex-basis: 19%;
     padding: 0px;
-    transition: font-size 0.7s;
-    margin-left: 100px; }
+    margin-left: 100px;
+    transition: all 1s; }
     .indice .indice__elemento #indiceTalleres {
       padding: 0px; }
     .indice .indice__elemento a {
@@ -183,13 +247,16 @@ footer {
       .indice .indice__elemento a:hover {
         color: black; }
     .indice .indice__elemento:hover {
-      font-size: 30px; }
+      font-size: 20px;
+      text-decoration: underline; }
     .indice .indice__elemento .indice__subelemento {
       margin-left: 0px;
       font-size: 20px;
       transition: font-size 0.7s; }
       .indice .indice__elemento .indice__subelemento:hover {
-        font-size: 30px; }
+        font-size: 22px; }
+  .indice .indice__seleccionado {
+    text-decoration: underline; }
 
 li {
   list-style-type: none; }
@@ -201,7 +268,6 @@ li {
   font-family: 'Shippori Mincho B1', serif;
   font-style: italic;
   font-variant: small-caps;
-  border: gray 5px solid;
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 5%;
@@ -225,57 +291,27 @@ li {
 /*VISITAR*/
 .visita {
   display: grid;
-  grid-template-areas: "Reserva Horarios" "Recorrido Recorrido";
-  grid-template-columns: 60% 40%;
-  grid-template-rows: 30% 70%;
-  grid-row-gap: 3%;
+  grid-template-areas: "Protocolo Horarios";
+  grid-template-columns: 58% 40%;
   grid-column-gap: 2%;
   justify-content: center;
   margin: 5%;
-  height: max-content; }
-  .visita .visita__reserva {
-    grid-area: Reserva;
+  height: 600px;
+  background-image: url(https://turismo.buenosaires.gob.ar/sites/turismo/files/useo_bellas_artes980_0.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .visita .visita__protocolo {
+    height: 100%;
+    grid-area: Protocolo;
     padding: 20px;
-    height: fit-content;
     animation: subir 1.5s;
-    background-color: #f2f2f2; }
+    background-color: rgba(242, 242, 242, 0.644); }
   .visita .visita__horarios {
     grid-area: Horarios;
     padding: 20px;
     height: fit-content;
     background-color: initial;
     animation: subir 1.5s; }
-  .visita .visita__recorrido {
-    grid-area: Recorrido;
-    height: fit-content;
-    padding: 20px;
-    margin-top: 2%;
-    animation: subir 1.5s;
-    background-color: #f2f2f2; }
-    .visita .visita__recorrido .visita__mapas {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-content: center;
-      justify-content: space-around;
-      align-content: space-around;
-      align-items: center;
-      height: fit-content;
-      padding: 3%; }
-      .visita .visita__recorrido .visita__mapas #mapa1 {
-        flex-basis: 50%; }
-        .visita .visita__recorrido .visita__mapas #mapa1:hover, .visita .visita__recorrido .visita__mapas #mapa2:hover {
-          animation-name: animacionLatir;
-          animation-duration: 2s;
-          animation-iteration-count: infinite; }
-        .visita .visita__recorrido .visita__mapas #mapa1 img {
-          width: 850px;
-          height: auto; }
-      .visita .visita__recorrido .visita__mapas #mapa2 {
-        flex-basis: 50%; }
-        .visita .visita__recorrido .visita__mapas #mapa2 img {
-          width: 850px;
-          height: auto; }
 
 /*TALLERES*/
 .talleres {
@@ -287,7 +323,7 @@ li {
   margin-top: 5%;
   margin-bottom: 5%;
   margin-left: 5%;
-  margin-right: 20%;
+  margin-right: 5%;
   grid-row-gap: 100px;
   grid-column-gap: 20%; }
   .talleres .talleres__taller {
@@ -343,14 +379,6 @@ li {
         grid-area: mat; }
 
 /*Animaciones*/
-@keyframes animacionLatir {
-  0% {
-    transform: scale(1, 1); }
-  50% {
-    transform: scale(1.05, 1.05); }
-  100% {
-    transform: scale(1, 1); } }
-
 @keyframes subir {
   0% {
     opacity: 0;
@@ -370,16 +398,11 @@ INICIO y GALERÍA
     padding: 0px;
     width: 100%;
     height: max-content; }
-  .inicio {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0px; }
+  .footer__logo {
+    display: block; }
   .indice {
     color: black;
-    font-size: 30px;
+    font-size: 15px;
     font-family: 'Shippori Mincho B1', serif;
     margin: 0px;
     width: 100%;
@@ -387,10 +410,51 @@ INICIO y GALERÍA
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-around;
-    align-items: left; }
+    align-items: center; }
+    .indice .indice__elemento {
+      margin: 0px; }
   .visita__imagenes {
     width: 500px;
-    margin: 0px; } }
+    margin: 0px; }
+  .inicio {
+    width: 100%;
+    height: 70%;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center; }
+    .inicio fieldset {
+      margin-bottom: 50px; }
+    .inicio .inicio__video {
+      display: block;
+      flex-direction: column;
+      justify-content: space-evenly;
+      flex-basis: 50%;
+      height: fit-content;
+      padding: 20px;
+      animation: subir 3s;
+      background-color: #f2f2f2; }
+      .inicio .inicio__video h3 {
+        text-transform: uppercase;
+        color: black;
+        font-size: 22px;
+        font-family: 'Shippori Mincho B1', serif; }
+      .inicio .inicio__video iframe {
+        width: 100%; }
+    .inicio .inicio__historia {
+      background-color: #f2f2f2;
+      flex-basis: 50%;
+      height: fit-content;
+      padding: 20px;
+      animation: subir 3s;
+      animation-iteration-count: 1; }
+      .inicio .inicio__historia h3 {
+        text-transform: uppercase;
+        color: black;
+        font-size: 22px;
+        font-family: 'Shippori Mincho B1', serif; } }
 
 /*Smartphone
 
@@ -402,16 +466,9 @@ INICIO y GALERÍA
     padding: 0px;
     height: max-content;
     width: 100%; }
-  .inicio {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0px; }
   .indice {
     color: black;
-    font-size: 40px;
+    font-size: 15px;
     font-family: 'Shippori Mincho B1', serif;
     margin: 0px;
     width: 100%;
@@ -420,6 +477,46 @@ INICIO y GALERÍA
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center; }
-  .visita__imagenes {
-    width: 300px;
-    margin: 0px; } }
+    .indice .indice__elemento {
+      margin: 0px; }
+  .inicio {
+    width: 100%;
+    height: 70%;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center; }
+    .inicio fieldset {
+      margin-bottom: 50px; }
+    .inicio .inicio__video {
+      display: block;
+      flex-direction: column;
+      justify-content: space-evenly;
+      flex-basis: 50%;
+      height: fit-content;
+      padding: 20px;
+      animation: subir 3s;
+      background-color: #f2f2f2; }
+      .inicio .inicio__video h3 {
+        text-transform: uppercase;
+        color: black;
+        font-size: 22px;
+        font-family: 'Shippori Mincho B1', serif; }
+      .inicio .inicio__video iframe {
+        width: 100%; }
+    .inicio .inicio__historia {
+      background-color: #f2f2f2;
+      flex-basis: 50%;
+      height: fit-content;
+      padding: 20px;
+      animation: subir 3s;
+      animation-iteration-count: 1; }
+      .inicio .inicio__historia h3 {
+        text-transform: uppercase;
+        color: black;
+        font-size: 22px;
+        font-family: 'Shippori Mincho B1', serif; }
+  .footer__logo {
+    display: block; } }

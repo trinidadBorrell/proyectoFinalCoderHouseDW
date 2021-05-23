@@ -7,15 +7,14 @@
     <title>Contacto: Museo de Bellas Artes </title>
     <meta name="keywords" content="Museo, Visitar Museo, Bellas Artes, Buenos Aires Turismo, Arte, Arte Argentina, Contacto con Museo">
     <meta name="description" content="El Museo Nacional de Bellas Artes es un organismo público, desconcentrado, dependiente del Ministerio de Cultura de la Nación Argentina. Su colección está integrada por arte precolombino, colonial, argentino e internacional, en un rango temporal que va del siglo III a.C. a la actualidad. Su gravitación reside también en el número de visitantes, de todas las edades, diferentes estratos sociales, procedentes del país y del exterior.">
-    <link rel="stylesheet" href="css/miarchivoCSS.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="css/miarchivoCSS.css">
 </head>
-<body>
+<body class="body__contacto">
     <header>
-        <h1 class="tituloPrincipal">Museo Nacional de Bellas Artes</h1>
-        <img> 
+        <div class="tituloPrincipal"><a href="index.html" class="tituloPrincipalLink">Museo Nacional de Bellas Artes</a></div>
         <nav>
           <ul class="indice">
               <li class="indice__elemento"><a href="index.html">Inicio</a></li>
@@ -30,27 +29,27 @@
                 </ul>
               </li>
               <li class="indice__elemento"><a href="galeria.html">Galería</a></li>
-              <li class="indice__elemento"><a href="contacto.html">Contacto</a></li>
+              <li class="indice__elemento indice__seleccionado"><a href="contacto.html">Contacto</a></li>
           </ul>
       </nav>
     </header>
     <main>
+        <h1 class="subtitulo">Contactanos</h1>
         <div class="container-fluid">
             <form class="formulario">
-                <h2>CONTACTANOS</h2>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    <input type="text" class="form-control" id="nombre" required>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="apellido">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" placeholder="Apellido">
+                    <input type="text" class="form-control" id="apellido" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="text" class="form-control" id="email" placeholder="Email">
+                  <input type="text" class="form-control" id="email" placeholder="ejemplo@mail.com" required>
                 </div>
                 <div class="form-group">
                     <label for="contactoRta">¿Por qué desea contactarnos?</label>
@@ -59,12 +58,13 @@
                 <div class="form-row">
                   <div class="form-group col-md-8">
                     <label for="domicilio">Domicilio</label>
-                    <input type="text" class="form-control" id="domicilio" placeholder="Calle, Provincia y Localidad">
+                    <input type="text" class="form-control" id="domicilio" placeholder="Calle, Provincia y Localidad" required>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputState">Nivel Educativo</label>
                     <select id="inputState" class="form-control">
                       <option selected>Elija...</option>
+                      <option>Primario completo</option>
                       <option>Secundaria en curso</option>
                       <option>Secundaria completa</option>
                       <option>Universitario/Terciario en curso</option>
@@ -83,14 +83,18 @@
                 </div>
                 <input type="submit" value="ENVIAR FORMULARIO" class="btn btn-dark" id="enviar">
                 <input type="reset" value="RESETEAR FORMULARIO" class="btn btn-dark" id="resetear">
+            </form>
         </div>
     </main>
     <footer>
-        <ul class="footer__lista">
+      <ul class="footer__lista">
           <li class="footer__elemento">Av. del Libertador 1473, Buenos Aires.</li>
           <li class="footer__elemento">Tel: +54 011 4637 3829</li>
           <li class="footer__elemento">museodearteba@hotmail.com</li>
-        </ul>
+      </ul>
+      <div class="footer__logo">
+          <img src="fotosMultimedia/LogoMuseo.png" alt="Logo del Museo">
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>

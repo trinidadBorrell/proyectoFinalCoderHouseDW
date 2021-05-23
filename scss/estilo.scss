@@ -19,6 +19,10 @@ body {
     padding: 0px;
 }
 
+.body__contacto{
+    background-color: initial;
+}
+
 main{
     @include size(100%, max-content);
     overflow: hidden;
@@ -45,11 +49,33 @@ h1 {
     text-align: center;}
 
 .tituloPrincipal {
+    @include text(black, 50px);
+    letter-spacing: 4px;
+    word-spacing: 6px;
+    text-align: center;
     margin: 0px;
     padding-top: 30px;
+    padding-left: 15%;
+    padding-right: 15%;
+    text-decoration: none;
+
+    &:hover{
+        @extend .tituloPrincipal;
+    }
 }
+
+.tituloPrincipalLink {
+    color: black;
+    text-decoration: none;
+    &:hover{
+        color: black;
+        text-decoration: none;
+
+    }
+}
+
 .subtitulo {
-    @include text(inherit, 30px);
+    @include text(inherit, 40px);
     margin-top: 3%;
     margin-bottom: 3%;
     text-align: center;
@@ -58,12 +84,11 @@ h1 {
 
 h3{
     @include text(black, 20px);
-    font-weight:900;
     text-transform: uppercase;
 }
     
 h4{
-    @include text(black, 20px);
+    @include text(black, 18px);
     font-weight:900;
 }
   
@@ -109,7 +134,7 @@ a {
         background-color: rgb(242, 242, 242);
         h3 {
             text-transform: uppercase;
-            @include text(black, 15px)
+            @include text(black, 22px)
         }
         iframe{
             width: 100%;
@@ -118,7 +143,7 @@ a {
     .inicio__historia {
         h3 {
             text-transform: uppercase;
-            @include text(black, 15px)
+            @include text(black, 22px)
         }
         background-color: rgb(242, 242, 242);
         flex-basis: 40%;
@@ -139,21 +164,78 @@ a {
         margin-top: 5%;
         margin-bottom: 5%;
     }
-    .carrousel{
-        @include size(40%, 50%);
-        margin: auto;
-        margin-bottom: 5%;
 
-        .galeria__carrouselTexto{
-            background: rgb(240,240,240);
-            background: linear-gradient(0deg, rgba(240,240,240,0.41220238095238093) 0%, rgba(255,255,255,1) 100%);
-            @include text(black, inherit);
-
-            .galeria__carrouselTitulo{
-                @include text(black, inherit);
-            }
-        }
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+      }
+      
+    .column {
+        flex: 33%;
+        max-width: 33%;
+        padding: 0 4px;
     }
+      
+    .column img {
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 100%;
+        animation: subir 1.5s;
+
+    }
+
+    .container {
+        position: relative;
+        width: 50%;
+      }
+      
+    .image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        transition: .5s ease;
+        backface-visibility: hidden;
+      }
+      
+      .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(50%, -50%);
+        -ms-transform: translate(50%, -80%);
+        text-align: center;
+      }
+      
+      .container:hover .image {
+        opacity: 0.3;
+      }
+      
+      .container:hover .middle {
+        opacity: 1;
+      }
+      
+      .text {
+        color: black;
+        font-size: 16px;
+        padding: 16px 32px;
+      }
+      
+      @media screen and (max-width: 800px) {
+        .column {
+          flex: 50%;
+          max-width: 50%;
+        }
+      }
+      
+      @media screen and (max-width: 600px) {
+        .column {
+          flex: 100%;
+          max-width: 100%;
+        }
+      }
 }
 
 /*FOOTER*/
@@ -162,7 +244,14 @@ footer{
     padding-top: 1%;
     padding-bottom: 1%;
     background-color:rgb(53, 53, 53);
+    display: grid;
+    grid-template-areas: 
+                        "footer logo";
+    grid-template-columns: 70% 30%;
+    justify-content: center;
+    height:max-content;
     .footer__lista {
+        grid-area: footer;
         @include text(white, 15px);
         font-variant: small-caps;
         overflow: hidden;
@@ -170,7 +259,17 @@ footer{
         .footer__elemento{
             padding-top: 0.5%;
         }
-    }   
+    }
+    .footer__logo{
+        grid-area: logo;
+        overflow: hidden;
+        padding-top: 5%;
+        padding-left: 10%;
+        img {
+            height: 50%;
+            width: auto;
+        }  
+    }
 }
     
 
@@ -194,8 +293,8 @@ footer{
     .indice__elemento{
         flex-basis: 19%;
         padding: 0px;
-        transition: font-size 0.7s;
         margin-left: 100px;
+        transition: all 1s;
 
         #indiceTalleres{
             padding:0px;
@@ -211,7 +310,8 @@ footer{
         }
 
         &:hover{
-            font-size: 30px;
+            font-size: 20px;
+            text-decoration: underline;
         }
 
         .indice__subelemento{
@@ -220,10 +320,15 @@ footer{
             transition: font-size 0.7s;
 
             &:hover{
-                font-size: 30px;
+                font-size: 22px;
             }
         }
     }
+
+    .indice__seleccionado{
+        text-decoration: underline;
+    }
+
 }
 
 li {
@@ -236,7 +341,6 @@ li {
     @include text(black, 20px);
     font-style: italic;
     font-variant: small-caps;
-    border:gray 5px solid;
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 5%;
@@ -267,15 +371,15 @@ li {
 .visita{
     display: grid;
     grid-template-areas: 
-                        "Reserva Horarios"
-                        "Recorrido Recorrido";
-    grid-template-columns: 60% 40%;
-    grid-template-rows: 30% 70%;
-    grid-row-gap: 3%;
+                        "Protocolo Horarios";
+    grid-template-columns: 58% 40%;
     grid-column-gap: 2%;
     justify-content: center;
     margin: 5%;
-    height:max-content;
+    height: 600px;
+    background-image: url(https://turismo.buenosaires.gob.ar/sites/turismo/files/useo_bellas_artes980_0.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     h3{
         @extend h3;
     }
@@ -286,12 +390,12 @@ li {
         @extend p;
     }
     
-    .visita__reserva{
-        grid-area: Reserva;
+    .visita__protocolo{
+        height: 100%;
+        grid-area: Protocolo;
         padding: 20px;
-        height: fit-content;
         animation: subir 1.5s;
-        background-color: rgb(242, 242, 242);
+        background-color: rgba(242, 242, 242, 0.644);
         
     }
     .visita__horarios{
@@ -300,46 +404,7 @@ li {
         height: fit-content;
         background-color: initial;
         animation: subir 1.5s;
-    }
-    .visita__recorrido{
-        grid-area: Recorrido;
-        height: fit-content;
-        padding: 20px;
-        margin-top: 2%;
-        animation: subir 1.5s;
-        background-color: rgb(242, 242, 242);
-
-        .visita__mapas{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            align-content: center;
-            justify-content: space-around;
-            align-content: space-around;
-            align-items: center;
-            height: fit-content;
-            padding: 3%;
-
-
-            #mapa1{
-                flex-basis: 50%;
-                &:hover{
-                animation-name: animacionLatir;
-                animation-duration: 2s;
-                animation-iteration-count: infinite;}
-                img{
-                    @include size(850px, auto);
-                }
-            }
-            #mapa2{
-                flex-basis: 50%;
-                &:hover{
-                @extend #mapa1:hover;}
-                img{
-                    @include size(850px, auto);
-                }
-            }
-        }
+        
     }
 }
 
@@ -358,7 +423,7 @@ li {
     margin-top: 5%;
     margin-bottom: 5%;
     margin-left: 5%;
-    margin-right: 20%;
+    margin-right: 5%;
     grid-row-gap: 100px;
     grid-column-gap: 20%;
 
@@ -436,17 +501,6 @@ li {
     
 /*Animaciones*/
 
-@keyframes animacionLatir{
-    0%{
-        transform: scale(1,1);
-    }
-    50%{
-        transform: scale(1.05,1.05);
-    }
-    100%{
-        transform: scale(1,1);
-    }
-}
 
 @keyframes subir {
     0% {
@@ -459,6 +513,7 @@ li {
     }
 
 }
+
 
 /*Media Query*/
 
@@ -473,31 +528,72 @@ INICIO y GALERÍA
         padding: 0px;
         @include size(100%, max-content);
     }
-    .inicio {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: space-around;
-        align-items: center;
-        margin:0px;
-    }
+    
+    .footer__logo{
+        display: block;
+        }  
 
     .indice {
-        @include text(black, 30px);
+        @include text(black, 15px);
         margin: 0px;
         width: 100%;
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
         justify-content: space-around;
-        align-items: left;
+        align-items: center;
+
+        .indice__elemento{
+            margin: 0px;
+        }
     }
     .visita__imagenes{
         width: 500px;
         margin: 0px;
-        
     }
-
+    .inicio {
+        @include size(100%, 70%);
+        margin-right: 15px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+    
+        fieldset {
+            margin-bottom: 50px;
+        }
+    
+        .inicio__video{
+            display: block;
+            flex-direction: column;
+            justify-content: space-evenly;
+            flex-basis: 50%;
+            height:fit-content;
+            padding: 20px;
+            animation: subir 3s;
+            background-color: rgb(242, 242, 242);
+            h3 {
+                text-transform: uppercase;
+                @include text(black, 22px)
+            }
+            iframe{
+                width: 100%;
+            }
+        }
+        .inicio__historia {
+            h3 {
+                text-transform: uppercase;
+                @include text(black, 22px)
+            }
+            background-color: rgb(242, 242, 242);
+            flex-basis: 50%;
+            height:fit-content;
+            padding: 20px;
+            animation: subir 3s;
+            animation-iteration-count: 1;
+            }
+        }
 }
 
 /*Smartphone
@@ -512,17 +608,9 @@ INICIO y GALERÍA
         height: max-content;
         width: 100%;
     }
-    .inicio {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: space-around;
-        align-items: center;
-        margin:0px;
-    }
 
     .indice {
-        @include text(black, 40px);
+        @include text(black, 15px);
         margin: 0px;
         width: 100%;
         display: flex;
@@ -530,14 +618,62 @@ INICIO y GALERÍA
         flex-wrap: nowrap;
         justify-content: space-around;
         align-items: center;
-    }
-    .visita__imagenes{
-        width: 300px;
-        margin: 0px;
-        
+
+        .indice__elemento{
+            margin: 0px;
+        }
     }
 
-}
+    .inicio {
+        @include size(100%, 70%);
+        margin-right: 15px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+    
+        fieldset {
+            margin-bottom: 50px;
+        }
+    
+        .inicio__video{
+            display: block;
+            flex-direction: column;
+            justify-content: space-evenly;
+            flex-basis: 50%;
+            height:fit-content;
+            padding: 20px;
+            animation: subir 3s;
+            background-color: rgb(242, 242, 242);
+            h3 {
+                text-transform: uppercase;
+                @include text(black, 22px)
+            }
+            iframe{
+                width: 100%;
+            }
+        }
+        .inicio__historia {
+            h3 {
+                text-transform: uppercase;
+                @include text(black, 22px)
+            }
+            background-color: rgb(242, 242, 242);
+            flex-basis: 50%;
+            height:fit-content;
+            padding: 20px;
+            animation: subir 3s;
+            animation-iteration-count: 1;
+            }
+        }
+    
+    .footer__logo{
+        display: block;
+        }
+            
+    }
+    
 
 
 
